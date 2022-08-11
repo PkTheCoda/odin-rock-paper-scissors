@@ -1,0 +1,87 @@
+.container {
+    display:flex;
+    border: 3px solid black;
+    position: relative;
+    width: 1800px;
+    height: 450px;
+    background-color: black;
+    left: 160px;
+    top: 50px;
+    justify-content: space-around;
+}
+
+.button {
+    height: 390px;
+    width: 490px;
+    /* border: 3px solid red; */
+    margin: 20px;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    background-color: black;
+    border-radius: 50px;
+}
+
+img:hover {
+    box-shadow: 0px 0px 100px 0px rgba(255,165,0,1);
+    opacity: 0.9;
+}
+
+.button-scissor {
+    position: relative;
+    left: 20px;
+}
+
+.button-rock {
+    position:relative;
+    top: 15px;
+}
+
+.button-paper {
+    position:relative;
+    top: 10px;
+}
+
+.rocktext {
+    position: relative;
+    bottom: 130px;
+    right: 600px;
+}
+
+.papertext {
+    position: relative;
+    top: 10px;
+}
+
+.scissortext {
+    position:relative;
+    left: 600px;
+    bottom: 280px;
+}
+
+.playerScore {
+    position:relative;
+    bottom: 190px;
+    right: 500px;
+}
+
+.computerScore {
+    position:relative;
+    bottom: 375px;
+    left: 300px;
+}
+.score {
+    font-size: 80px;
+}
+
+span {
+    color: cyan;
+}
+
+#textmessage {
+    position: relative;
+    text-align: center;
+    bottom: 300px;
+}

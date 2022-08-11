@@ -3,15 +3,32 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <script src="script.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <body style="background-color: black; text-align: center; color: yellow;">
+    <body style="background-color: black; text-align: center; color: yellow; font-size: 40px;">
         <h1 style="text-align: center; color: yellow;">Welcome to Rock, Paper, Scissors</h1>
-        <h3>Right-Click and click "Inspect" to play! (Make sure to use the console tab!)</h3>
-        <h2>Refresh the page to play again!</h2>
-        <h4>(First person/computer to FIVE wins!)</h4>
-        <h3>Buttons and interactivity will come later . . .</h3>
+        <h3 style="text-align: center; color:red;">Can YOU beat a computer? First to five points wins!</h3>
+
+
+        <div class="container">
+            <div class="button button-rock">
+                <img id="imagerock" src="realrock.png" alt="rock">
+            </div>
+            <div class="button button-paper">
+                <img id="imagepaper" src="realpaper.png" alt="paper">
+            </div>
+            <div class="button button-scissor">
+                <img id="imagescissors" src="realscissor.png" alt="scissors">
+            </div>
+        </div>
+        <h1 class="papertext">Paper</h1>
+        <h1 class="rocktext">Rock</h1>
+        <h1 class="scissortext">Scissor</h1>
+        <h2 class="playerScore">Your score: <div id="scorePlayer" style="color:cyan;">0</div> </h2>
+        <h2 class="computerScore">Computer Score: <div id="scoreComputer" style="color:cyan;">0</div></h2>
+        <h3 id="textmessage">Win or Lose, we'll find out soon!</h3>
     </body>
+
+    <script src="script.js" defer></script>
 </html>

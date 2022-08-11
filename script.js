@@ -13,24 +13,25 @@ function getComputerChoice() {
     return computerChoice
 }
 
+let playerSelection = ''
+const rock = document.querySelector('#imagerock')
+const paper = document.querySelector('#imagepaper')
+const scissors = document.querySelector('#imagescissors')
 
+playerScore = 0
+computerScore = 0
 function oneroundgame(playerSelection, computerSelection) {
-    playerScore = 0
-    computerScore = 0
-   for (let computerScore = 0; computerScore <= 4;) { 
+    
         var computerSelection = getComputerChoice();
-        var playerSelection = prompt("Choose Rock, Paper, or Scissors")
-        var realPlayerSelection = playerSelection.toLowerCase()
-        var winMessage = ""
 
         if (computerSelection === playerSelection) {
             console.log(`It's a tie, nobody gets a point!
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `)
-
+            document.getElementById('textmessage').innerHTML = "It's a tie, nobody gets a point!"
             if (playerScore === 5 || computerScore === 5) {
-                break;
+                
             }
 
         } else if (computerSelection === "rock" && playerSelection === "scissors") {
@@ -39,9 +40,9 @@ function oneroundgame(playerSelection, computerSelection) {
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `)
-
+            document.getElementById('textmessage').innerHTML = 'You lost, rock beats scissors!'
             if (playerScore === 5 || computerScore === 5) {
-                break;
+                
             }
 
         } else if (computerSelection === "rock" && playerSelection === "paper") {
@@ -50,9 +51,9 @@ function oneroundgame(playerSelection, computerSelection) {
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `)
-
+            document.getElementById('textmessage').innerHTML = 'You won, paper beats rock!'
             if (playerScore === 5 || computerScore === 5) {
-                break;
+            
             }
 
         } else if (computerSelection === "paper" && playerSelection === "scissors") {
@@ -61,9 +62,10 @@ function oneroundgame(playerSelection, computerSelection) {
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `)
+            document.getElementById('textmessage').innerHTML = 'You won, scissors beats paper!'
             
             if (playerScore === 5 || computerScore === 5) {
-                break;
+                
             }
 
         } else if (computerSelection === "paper" && playerSelection === "rock") {
@@ -72,9 +74,10 @@ function oneroundgame(playerSelection, computerSelection) {
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `)
+            document.getElementById('textmessage').innerHTML = 'You lost, paper beats rock!'
 
             if (playerScore === 5 || computerScore === 5) {
-                break;
+                
             }
 
         } else if (computerSelection === "scissors" && playerSelection === "rock") {
@@ -83,9 +86,10 @@ function oneroundgame(playerSelection, computerSelection) {
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `)
+            document.getElementById('textmessage').innerHTML = 'You won, rock beats scissors!'
 
             if (playerScore === 5 || computerScore === 5) {
-                break;
+                
             }
 
         } else if (computerSelection === "scissors" && playerSelection === "paper") {
@@ -94,20 +98,40 @@ function oneroundgame(playerSelection, computerSelection) {
                         Player Points: ${playerScore}
                         Computer Points: ${computerScore}
             `) 
+            document.getElementById('textmessage').innerHTML = 'You lost, scissors beats paper!'
+
 
             if (playerScore === 5 || computerScore === 5) {
-                break;
+                
             }
 
         } else {
             console.log("Make sure to type in either 'rock', 'paper', or 'scissors'. Typing anything else may cause the code to not work properly!")
-        }
-    }
-        
+        }        
         
 }
 
-oneroundgame();
+
+rock.addEventListener('click', () => {
+    playerSelection = 'rock'
+    oneroundgame(playerSelection, getComputerChoice());
+    document.getElementById('scoreComputer').innerHTML = computerScore
+    document.getElementById('scorePlayer').innerHTML = playerScore
+});
+
+paper.addEventListener('click', () => {
+    playerSelection = 'paper'
+    oneroundgame(playerSelection, getComputerChoice());
+    document.getElementById('scoreComputer').innerHTML = computerScore
+    document.getElementById('scorePlayer').innerHTML = playerScore
+});
+
+scissors.addEventListener('click', () => {
+    playerSelection = 'scissors'
+    oneroundgame(playerSelection, getComputerChoice());
+    document.getElementById('scoreComputer').innerHTML = computerScore
+    document.getElementById('scorePlayer').innerHTML = playerScore
+});
 
 
 
@@ -115,3 +139,9 @@ oneroundgame();
 
 
 
+
+
+
+
+ 
+        
